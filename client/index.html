@@ -12,14 +12,14 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="/">Movie Database</a>
-                <ul class="nav">
-                    <li class="active">
+                <ul class="nav" ng-controller="HeaderControler">
+                    <li ng-class="{ active: isActive('/')}">
                         <a href="/">Home</a>
                     </li>
-                    <li>
+                    <li ng-class="{ active: isActive('/movies')}">
                         <a href="/movies">Movies</a>
                     </li>
-                    <li>
+                    <li ng-class="{ active: isActive('/actors')}">
                         <a href="/actors">Actors</a>
                     </li>
                 </ul>
