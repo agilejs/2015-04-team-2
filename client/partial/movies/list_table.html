@@ -11,6 +11,14 @@
                     {{movie.title}}
                 </a>
             </td>
+            <td>
+                <p ng-show="movie.year";>
+                    {{movie.year}}
+                </p>
+                <p ng-hide="movie.year" ng-href="/movies/{{movie.id}}";>
+                    unknown
+                </p>
+            </td>
         </tr>
     </tbody>
 </table>
