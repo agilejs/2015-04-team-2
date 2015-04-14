@@ -3,8 +3,20 @@ function AppCtrl ($scope) {
     $scope.title = 'The Movie Database';
 }
 
-function WelcomeCtrl () {
+function WelcomeCtrl ($scope, $location, moviesResponse) {
+    'use strict';
+    $scope.movies = moviesResponse.data;
+    $scope.add = function () {
+        $location.path('/movies/new');
+    };
 }
+
+WelcomeCtrl.resolve = {
+    moviesResponse: function ($http) {
+        'use strict';
+        return $http.get('/movies');
+    }
+};
 
 function MoviesListCtrl ($scope, $location, moviesResponse) {
     'use strict';
